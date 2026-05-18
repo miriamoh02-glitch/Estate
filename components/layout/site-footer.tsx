@@ -10,6 +10,7 @@ const footerNav = {
   ],
   company: [
     { label: "About Us", href: "/about" },
+    { label: "Our Agents", href: "/agents" },
     { label: "Contact", href: "/contact" },
     { label: "List Your Property", href: "/contact?intent=list" },
   ],

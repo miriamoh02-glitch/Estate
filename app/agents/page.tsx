@@ -1,10 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle2 } from "lucide-react";
 import { agents } from "@/lib/mock-data/agents";
 import { Button } from "@/components/ui/button";
 
 export const metadata = { title: "Our Agents" };
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2);
+}
 
 export default function AgentsPage() {
   const agentList = Object.values(agents);
@@ -26,13 +33,9 @@ export default function AgentsPage() {
               key={agent.id}
               className="border border-border bg-card p-8 transition-shadow hover:shadow-luxury-sm"
             >
-              <Image
-                src={agent.avatar}
-                alt={agent.name}
-                width={80}
-                height={80}
-                className="rounded-full object-cover"
-              />
+              <div className="flex h-16 w-16 items-center justify-center bg-accent/15 font-display text-2xl text-accent">
+                {getInitials(agent.name)}
+              </div>
               <h2 className="mt-4 font-display text-xl text-primary">{agent.name}</h2>
               <p className="text-sm text-secondary">{agent.title}</p>
               {agent.verified && (

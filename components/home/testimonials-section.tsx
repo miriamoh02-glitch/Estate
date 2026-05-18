@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FadeIn } from "@/components/motion/fade-in";
 import { testimonials } from "@/lib/mock-data/testimonials";
 
@@ -24,20 +23,11 @@ export function TestimonialsSection() {
                 <p className="flex-1 font-display text-xl leading-relaxed text-primary-foreground/90">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <footer className="mt-8 flex items-center gap-4 border-t border-primary-foreground/10 pt-6">
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full object-cover"
-                  />
-                  <div>
-                    <cite className="not-italic font-medium">{t.name}</cite>
-                    <p className="text-sm text-primary-foreground/60">
-                      {t.role} · {t.location}
-                    </p>
-                  </div>
+                <footer className="mt-8 border-t border-primary-foreground/10 pt-6">
+                  <cite className="not-italic font-medium">{t.name}</cite>
+                  <p className="mt-1 text-sm text-primary-foreground/60">
+                    {t.role} · {t.location}
+                  </p>
                 </footer>
               </blockquote>
             </FadeIn>
