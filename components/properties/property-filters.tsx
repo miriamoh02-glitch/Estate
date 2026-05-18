@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const cities = ["New York", "London", "Dubai", "Accra"];
+const cities = ["Accra", "Tema", "Kumasi", "Takoradi"];
 const types = [
   { value: "apartment", label: "Apartment" },
   { value: "house", label: "House" },

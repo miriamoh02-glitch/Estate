@@ -1,21 +1,20 @@
-/** Curated Unsplash IDs — luxury real estate photography */
+/** Curated Unsplash IDs — modern African / tropical estate photography */
 export const IMAGES = {
-  hero: "1613490493576-7fde63acd811",
-  investment: "1512917774080-999a75830299",
-  about: "1600585154340-be6162a9a2a6",
+  hero: "1600585154340-be6162a9a2a6",
+  about: "1600585154526-990dced4db0d",
   penthouse: [
-    "1600596542815-ffad4c1539a9",
-    "1600607687939-ce8a6c25118c",
+    "1600607687644-c7171b424245",
     "1600210492483-0946911123ea",
+    "1600047509807-ba8f99d2cdde",
   ],
   townhouse: [
+    "1600585154526-990dced4db0d",
     "1600585154340-be6162a9a2a6",
-    "1600047509807-ba8f99d2cdde",
     "1512917774080-999a75830299",
   ],
   office: [
     "1497366216548-37526070297c",
-    "1497366751453-902cef43b0b1",
+    "1497366811453-902cef43b0b1",
     "1486406146926-c627a92ad1ab",
   ],
   villa: [
@@ -30,9 +29,9 @@ export const IMAGES = {
   ],
   estate: [
     "1600585154526-990dced4db0d",
-    "1512917774080-999a75830299",
+    "1600047509807-ba8f99d2cdde",
   ],
-  loft: [
+  rental: [
     "1600607687920-4e2a09cf159d",
     "1600210492483-0946911123ea",
   ],
@@ -47,9 +46,5 @@ export const IMAGES = {
 } as const;
 
 export function luxuryUrl(photoId: string, width = 2000): string {
-  return `https://images.unsplash.com/photo-${photoId}?w=${width}&q=92&auto=format&fit=crop`;
-}
-
-export function luxuryThumb(photoId: string): string {
-  return luxuryUrl(photoId, 400);
+  return `https://images.unsplash.com/photo-${photoId}?w=${width}&q=90&auto=format&fit=crop`;
 }

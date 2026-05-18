@@ -65,9 +65,6 @@ export function SiteHeader() {
           >
             <Heart className="h-5 w-5" />
           </Link>
-          <Button variant="outline" size="sm" className="hidden sm:inline-flex" asChild>
-            <Link href="/contact">Consultation</Link>
-          </Button>
           <Button size="sm" asChild>
             <Link href="/auth">Sign In</Link>
           </Button>

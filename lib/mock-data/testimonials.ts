@@ -1,33 +1,33 @@
 import type { Testimonial } from "@/types/property";
-import { IMAGES, luxuryThumb } from "@/config/images";
+import { IMAGES } from "@/config/images";
 
 export const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Victoria Ashford",
     role: "Private Investor",
-    location: "London",
+    location: "Accra",
     quote:
-      "Meridian Estates understood our requirements before we articulated them. The penthouse acquisition was seamless—from first viewing to closing in six weeks.",
-    image: luxuryThumb("1438761681033-6461ffad8d80"),
+      "Gold Coast Estates understood our requirements before we articulated them. The East Legon acquisition was seamless—from first viewing to closing in six weeks.",
+    image: "",
   },
   {
     id: "2",
     name: "James Okonkwo",
     role: "CEO, Okonkwo Holdings",
-    location: "Lagos / Accra",
+    location: "Accra",
     quote:
-      "Their market intelligence across West Africa is unmatched. We secured three investment properties with full transparency on title and projected yields.",
-    image: luxuryThumb("1507003211169-0a1dd7228f2d"),
+      "Their market intelligence across Ghana is unmatched. We secured three investment properties with full transparency on title and projected yields.",
+    image: "",
   },
   {
     id: "3",
-    name: "Sophie Laurent",
+    name: "Akosua Mensah",
     role: "Family Office Director",
-    location: "Geneva",
+    location: "Kumasi",
     quote:
-      "Virtual viewings, verified documentation, and a dedicated advisor made our Dubai portfolio expansion effortless despite being continents away.",
-    image: luxuryThumb("1544005313-94ddf0286df2"),
+      "Virtual viewings, verified documentation, and a dedicated advisor made our portfolio expansion effortless across Accra and Tema.",
+    image: "",
   },
 ];
 
@@ -38,7 +38,7 @@ export const categories = [
     description: "Urban residences with world-class amenities",
     imageId: IMAGES.categories.apartments,
     href: "/apartments",
-    count: 842,
+    count: 312,
   },
   {
     id: "offices",
@@ -46,15 +46,15 @@ export const categories = [
     description: "Grade-A commercial spaces for enterprise",
     imageId: IMAGES.categories.offices,
     href: "/offices",
-    count: 312,
+    count: 98,
   },
   {
     id: "villas",
     title: "Villas",
-    description: "Private estates and beachfront retreats",
+    description: "Private estates and gated community homes",
     imageId: IMAGES.categories.villas,
     href: "/properties?type=villa",
-    count: 156,
+    count: 84,
   },
   {
     id: "commercial",
@@ -62,15 +62,15 @@ export const categories = [
     description: "Retail, mixed-use, and investment assets",
     imageId: IMAGES.categories.commercial,
     href: "/properties?type=commercial",
-    count: 198,
+    count: 67,
   },
   {
     id: "land",
     title: "Land",
-    description: "Development parcels and agricultural holdings",
+    description: "Development parcels with clear title",
     imageId: IMAGES.categories.land,
     href: "/properties?type=land",
-    count: 89,
+    count: 45,
   },
 ];
 

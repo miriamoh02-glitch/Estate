@@ -5,8 +5,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(amount: number, currency = "USD"): string {
-  return new Intl.NumberFormat("en-US", {
+/** Formats amounts in Ghana Cedis (GHS) by default */
+export function formatPrice(amount: number, currency = "GHS"): string {
+  return new Intl.NumberFormat("en-GH", {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
@@ -14,5 +15,5 @@ export function formatPrice(amount: number, currency = "USD"): string {
 }
 
 export function formatNumber(num: number): string {
-  return new Intl.NumberFormat("en-US").format(num);
+  return new Intl.NumberFormat("en-GH").format(num);
 }

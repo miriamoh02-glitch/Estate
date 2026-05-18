@@ -50,7 +50,7 @@ export function LuxuryImage({
   className,
 }: LuxuryImageProps) {
   return (
-    <>
+    <div className={cn("relative h-full w-full overflow-hidden bg-muted", className)}>
       <Image
         src={src}
         alt={alt}
@@ -63,23 +63,18 @@ export function LuxuryImage({
           "object-cover brightness-[0.98] contrast-[1.05] saturate-[1.08]",
           focalMap[focal],
           hoverZoom &&
-            "transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]",
-          className
+            "transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
         )}
       />
       {overlay !== "none" && (
         <div
           className={cn(
-            "pointer-events-none absolute inset-0",
+            "pointer-events-none absolute inset-0 z-[1]",
             overlayStyles[overlay]
           )}
           aria-hidden
         />
       )}
-      <div
-        className="pointer-events-none absolute inset-0 shadow-[inset_0_0_80px_rgba(17,19,21,0.12)]"
-        aria-hidden
-      />
-    </>
+    </div>
   );
 }

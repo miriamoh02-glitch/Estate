@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Search, MapPin, Home, DollarSign } from "lucide-react";
+import { Search, MapPin, Home, Banknote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const propertyTypes = [
@@ -16,11 +16,13 @@ const propertyTypes = [
 
 const priceRanges = [
   { value: "", label: "Any Price" },
-  { value: "0-500000", label: "Under $500K" },
-  { value: "500000-2000000", label: "$500K – $2M" },
-  { value: "2000000-10000000", label: "$2M – $10M" },
-  { value: "10000000+", label: "$10M+" },
+  { value: "0-500000", label: "Under GH₵500K" },
+  { value: "500000-2000000", label: "GH₵500K – GH₵2M" },
+  { value: "2000000-10000000", label: "GH₵2M – GH₵10M" },
+  { value: "10000000+", label: "GH₵10M+" },
 ];
+
+const cities = ["", "Accra", "Tema", "Kumasi", "Takoradi"];
 
 export function HeroSearch() {
   const router = useRouter();
@@ -48,13 +50,17 @@ export function HeroSearch() {
             <MapPin className="h-3 w-3" />
             Location
           </label>
-          <input
-            type="text"
-            placeholder="City or neighborhood"
+          <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="w-full border-b border-border bg-transparent py-2 text-primary outline-none placeholder:text-secondary/50 focus:border-accent"
-          />
+            className="w-full border-b border-border bg-transparent py-2 text-primary outline-none focus:border-accent"
+          >
+            {cities.map((c) => (
+              <option key={c || "all"} value={c}>
+                {c || "All Cities"}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           <label className="mb-2 flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-widest text-secondary">
@@ -75,8 +81,8 @@ export function HeroSearch() {
         </div>
         <div>
           <label className="mb-2 flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-widest text-secondary">
-            <DollarSign className="h-3 w-3" />
-            Price Range
+            <Banknote className="h-3 w-3" />
+            Price Range (GHS)
           </label>
           <select
             value={price}

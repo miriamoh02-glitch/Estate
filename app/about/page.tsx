@@ -11,7 +11,7 @@ export default function AboutPage() {
         <div className="relative aspect-[21/9] max-h-[50vh] min-h-[320px] overflow-hidden">
           <LuxuryImage
             src={luxuryUrl(IMAGES.about, 2000)}
-            alt="Meridian Estates"
+            alt="Gold Coast Estates Ghana"
             priority
             focal="center"
             overlay="cinematic"
@@ -27,10 +27,10 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-3xl px-6 py-section-sm lg:px-10">
         <p className="text-lg leading-relaxed text-secondary">
-          For nearly four decades, Meridian Estates has connected discerning buyers,
-          investors, and tenants with exceptional properties across the world&apos;s most
-          desirable markets. Our approach combines institutional rigor with the personal
-          attention expected by high-net-worth clients.
+          Gold Coast Estates connects discerning buyers, investors, and tenants with
+          exceptional properties across Ghana&apos;s most desirable markets—from East Legon
+          and Cantonments to Airport City and Trasacco Valley. Our approach combines
+          institutional rigor with the personal attention expected by high-net-worth clients.
         </p>
         <p className="mt-6 text-lg leading-relaxed text-secondary">
           Every listing in our portfolio undergoes verification. Every client receives a

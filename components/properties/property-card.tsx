@@ -36,7 +36,7 @@ export function PropertyCard({
           href={`/properties/${property.slug}`}
           className="group flex gap-6 border border-border bg-card p-4 transition-shadow hover:shadow-luxury"
         >
-          <div className="relative h-44 w-64 shrink-0 overflow-hidden">
+          <div className="relative h-44 w-64 shrink-0 overflow-hidden bg-muted">
             <LuxuryImage
               src={property.images[0]}
               alt={property.title}
@@ -73,25 +73,27 @@ export function PropertyCard({
       >
         <div
           className={
-            variant === "featured" ? "relative aspect-[4/5]" : "relative aspect-[3/4]"
+            variant === "featured"
+              ? "relative aspect-[4/5] min-h-[280px] bg-muted"
+              : "relative aspect-[3/4] min-h-[260px] bg-muted"
           }
         >
           <LuxuryImage
             src={property.images[0]}
             alt={property.title}
-            focal={variant === "featured" ? "center" : "center"}
+            focal="center"
             overlay="cinematic"
             hoverZoom
             sizes="(max-width: 768px) 100vw, 33vw"
           />
-          <div className="absolute inset-0 z-10 flex flex-col justify-between p-4">
-            <div className="flex flex-col gap-2">
+          <div className="absolute inset-0 z-10 flex items-start justify-between p-3">
+            <div className="flex flex-wrap gap-1.5">
               <PropertyStatusBadge status={property.status} />
               {property.verified && <VerifiedBadge />}
             </div>
             <button
               type="button"
-              className="ml-auto flex h-10 w-10 items-center justify-center bg-background/90 text-primary opacity-0 backdrop-blur transition-all group-hover:opacity-100"
+              className="flex h-9 w-9 shrink-0 items-center justify-center bg-background/90 text-primary opacity-0 backdrop-blur transition-all group-hover:opacity-100"
               onClick={(e) => e.preventDefault()}
               aria-label="Save property"
             >
@@ -116,18 +118,22 @@ function PropertyCardContent({
 }) {
   return (
     <div className={compact ? "flex flex-1 flex-col justify-center py-2" : "p-5"}>
-      <p className="font-display text-xl text-primary">{priceLabel}</p>
+      <p className="font-display text-xl tabular-nums text-primary">{priceLabel}</p>
       <h3
-        className={`mt-1 font-display text-primary ${compact ? "text-lg" : "text-xl"}`}
+        className={`mt-1.5 font-display text-pretty leading-snug text-primary ${
+          compact ? "line-clamp-2 text-lg" : "line-clamp-2 min-h-[3.25rem] text-xl"
+        }`}
       >
         {property.title}
       </h3>
       <p className="mt-2 flex items-center gap-1.5 text-sm text-secondary">
         <MapPin className="h-3.5 w-3.5 shrink-0" />
-        {property.location.area}, {property.location.city}
+        <span className="truncate">
+          {property.location.area}, {property.location.city}
+        </span>
       </p>
       {property.specs.bedrooms > 0 && (
-        <div className="mt-4 flex items-center gap-5 text-xs text-secondary">
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-secondary">
           <span className="flex items-center gap-1.5">
             <Bed className="h-3.5 w-3.5" />
             {property.specs.bedrooms} bed

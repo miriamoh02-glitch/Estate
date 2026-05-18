@@ -33,10 +33,10 @@ export function HeroSection() {
           className="max-w-3xl"
         >
           <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-accent">
-            Premium Real Estate · Global Portfolio
+            Premium Real Estate · Ghana
           </p>
           <h1 className="font-display text-display-md text-primary-foreground text-balance md:text-display-lg lg:text-display-xl">
-            Find Exceptional Spaces Designed For Modern Living.
+            Exceptional Ghanaian Estates For Modern Living.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
             {siteConfig.description}
@@ -47,14 +47,6 @@ export function HeroSection() {
                 Explore Properties
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              asChild
-            >
-              <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </div>
         </motion.div>

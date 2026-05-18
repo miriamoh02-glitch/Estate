@@ -55,7 +55,7 @@ export function WhyChooseUs() {
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           <FadeIn>
             <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-accent">
-              Why Meridian
+              Why Gold Coast
             </p>
             <h2 className="mt-3 font-display text-display-md text-primary">
               Trust Built Into Every Transaction
