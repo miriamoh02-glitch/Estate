@@ -3,8 +3,10 @@
  * Format: https://images.unsplash.com/photo-{id}?w={width}&q=80
  */
 export const IMAGES = {
+  /** Tropical coastal villa — primary brand imagery */
   hero: "1613490493576-7fde63acd811",
-  about: "1600585154526-990dced4db0d",
+  /** Gold Coast: luxury estate at golden hour / coastal living */
+  about: "1600596542815-ffad4c1539a9",
   penthouse: [
     "1600596542815-ffad4c1539a9",
     "1600607687939-ce8a6c25118c",
@@ -46,5 +48,5 @@ export function luxuryUrl(photoId: string, width = 1920): string {
   return `https://images.unsplash.com/photo-${photoId}?w=${width}&q=80&auto=format&fit=crop`;
 }
 
-/** Hero background — verified URL, used as fallback constant */
 export const HERO_IMAGE_URL = luxuryUrl(IMAGES.hero, 1920);
+export const ABOUT_IMAGE_URL = luxuryUrl(IMAGES.about, 2400);

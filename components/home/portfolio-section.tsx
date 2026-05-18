@@ -4,12 +4,15 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { PropertyCard } from "@/components/properties/property-card";
-import { getFeaturedProperties } from "@/lib/mock-data/properties";
+import { getFeaturedProperties, properties } from "@/lib/mock-data/properties";
 import { categories } from "@/lib/mock-data/testimonials";
 import { formatNumber } from "@/lib/utils";
 
 export function PortfolioSection() {
   const featured = getFeaturedProperties();
+  const apartments = properties
+    .filter((p) => p.type === "apartment")
+    .slice(0, 4);
 
   return (
     <section className="border-y border-border bg-muted/20 py-section-sm lg:py-section">
@@ -20,10 +23,11 @@ export function PortfolioSection() {
               Portfolio
             </p>
             <h2 className="mt-3 font-display text-display-md text-primary">
-              Featured Properties &amp; Categories
+              Properties &amp; Apartments
             </h2>
             <p className="mt-3 text-secondary">
-              Curated listings and browse paths across apartments, offices, villas, and more.
+              Curated Ghanaian estates, residences, and commercial assets—in a clear,
+              sequenced view.
             </p>
           </div>
           <Link
@@ -35,19 +39,46 @@ export function PortfolioSection() {
           </Link>
         </FadeIn>
 
+        {/* Featured properties — equal row */}
         <div className="mt-12">
-          <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-secondary">
-            Featured
-          </p>
-          <StaggerContainer className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.slice(0, 4).map((property) => (
+          <div className="mb-6 flex items-end justify-between gap-4 border-b border-border pb-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-secondary">
+              Featured Properties
+            </p>
+            <span className="text-xs text-secondary">{featured.length} listings</span>
+          </div>
+          <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((property) => (
               <StaggerItem key={property.id} className="min-w-0">
-                <PropertyCard property={property} />
+                <PropertyCard property={property} variant="uniform" />
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
 
+        {/* Apartments — equal row */}
+        <div className="mt-16">
+          <div className="mb-6 flex items-end justify-between gap-4 border-b border-border pb-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-secondary">
+              Apartments
+            </p>
+            <Link
+              href="/apartments"
+              className="text-xs font-medium uppercase tracking-widest text-accent hover:text-primary"
+            >
+              View all apartments →
+            </Link>
+          </div>
+          <StaggerContainer className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {apartments.map((property) => (
+              <StaggerItem key={property.id} className="min-w-0">
+                <PropertyCard property={property} variant="uniform" />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+
+        {/* Categories — text cards */}
         <div className="mt-16 border-t border-border pt-12">
           <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-secondary">
             Browse by Category

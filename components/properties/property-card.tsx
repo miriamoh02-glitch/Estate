@@ -11,7 +11,7 @@ import { PropertyStatusBadge } from "./property-status";
 
 interface PropertyCardProps {
   property: Property;
-  variant?: "default" | "featured" | "horizontal";
+  variant?: "default" | "featured" | "horizontal" | "uniform";
   className?: string;
 }
 
@@ -73,9 +73,11 @@ export function PropertyCard({
       >
         <div
           className={
-            variant === "featured"
-              ? "relative aspect-[4/5] min-h-[280px] bg-muted"
-              : "relative aspect-[3/4] min-h-[260px] bg-muted"
+            variant === "uniform"
+              ? "relative aspect-[4/3] bg-muted"
+              : variant === "featured"
+                ? "relative aspect-[4/5] min-h-[280px] bg-muted"
+                : "relative aspect-[3/4] min-h-[260px] bg-muted"
           }
         >
           <LuxuryImage
